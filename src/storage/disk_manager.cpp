@@ -116,7 +116,7 @@ void DiskManager::create_file(const std::string &path) {
         throw FileExistsError(path);
     }
 
-    int fd = open(path.c_str(), O_CREAT);
+    int fd = open(path.c_str(), O_CREAT | O_RDWR, 0666);
     close(fd);
 }
 
